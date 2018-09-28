@@ -5,11 +5,20 @@ import './App.css';
 import Header from "./components/Header/Header"
 
 class App extends Component {
-  
+  constructor(){
+    super();
+    this.state = {
+        title: "This is the title here",
+    }
+}
+
+changeTitle(title){
+    this.setState({title})
+  }
+
   render() {
-    const title = "TITLE HERE!!!"
     return (
-      <Header changeTitle={this.changeTitle} title={title}/>
+      <Header changeTitle={this.changeTitle.bind(this)} title={this.state.title}/>
     );
   }
 }

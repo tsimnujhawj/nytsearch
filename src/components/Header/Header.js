@@ -1,28 +1,30 @@
 import React, { Component } from 'react';
 
 class Header extends Component {
-    constructor(){
-        super();
-        this.state = {
-            title: "This is the title",
-            stuff: [{
-                name: "alex"
-            }]
-        }
+
+    handleChange(e) {
+        const title = e.target.value;
+        this.props.changeTitle(title);
     }
 
-    changeTitle(title){
-        this.setState({title})
-    }
   render() {
-    console.log(this.props)
     return (
-      <div className="container">
-        <h1>{this.state.title}</h1>
-        <h1>{this.state.stuff[0].name}</h1>
-        <h1>{this.props.title}</h1>
-        <input />
-      </div>
+      
+    <div>
+        
+        <div className="jumbotron jumbotron-fluid">
+        <div className="container">
+            <h1 className="display-4">Fluid jumbotron</h1>
+            <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+        </div>
+        </div>
+
+        <div className="container">
+            <h1>{this.props.title}</h1>
+            <input value={this.props.title} onChange={this.handleChange.bind(this)}/>
+        </div>
+
+    </div>
     );
   }
 }
