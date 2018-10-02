@@ -2,11 +2,6 @@ import React, { Component } from 'react';
 
 class Header extends Component {
 
-    handleChange(e) {
-        const title = e.target.value;
-        this.props.changeTitle(title);
-    }
-
   render() {
     return (
       
@@ -14,14 +9,9 @@ class Header extends Component {
         
         <div className="jumbotron jumbotron-fluid">
         <div className="container">
-            <h1 className="display-4">Fluid jumbotron</h1>
-            <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            <h1 className="display-4">New York Times Search</h1>
+            <p className="lead">Fast, simple, NYT article search engine.</p>
         </div>
-        </div>
-
-        <div className="container">
-            <h1>{this.props.title}</h1>
-            <input value={this.props.title} onChange={this.handleChange.bind(this)}/>
         </div>
 
     </div>

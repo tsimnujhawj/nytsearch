@@ -26,3 +26,27 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.search-head {
+  text-align: center;
+}
+
+.submit-btn {
+  float: right;
+}
+
+.search-section {
+  margin: 20px;
+}
+
+.results-section {
+  margin: 80px;
+}
+
+.list-group-item {
+  margin: 20px;
+}
+
+.article-title {
+  margin-bottom: 20px;
+}
