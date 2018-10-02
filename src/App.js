@@ -74,6 +74,13 @@ class App extends Component {
         .then(this.getSavedArticles());
     }
 
+    // Method for getting saved articles (all articles) from the db
+    getSavedArticles = () => {
+      API.getArticle()
+      .then((res) => {
+        this.setState({ saved: res.data });
+      });
+    }
 
   render() {
     return (
