@@ -16,13 +16,12 @@
     "react-scripts": "1.1.5"
   },
   "scripts": {
-    "server": "node server.js",
-    "client": "cd client && npm run start",
-    "start": "./node_modules/.bin/concurrently \"npm run server\" \"npm run client\"",
+    "server": "NODE_ENV=production node server.js",
+    "client": "NODE_ENV=production cd client && npm run start",
+    "start": "NODE_ENV=production ./node_modules/.bin/concurrently \"npm run server\" \"npm run client\"",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+    "eject": "react-scripts eject"
   },
   "devDependencies": {
     "concurrently": "^4.0.1"
