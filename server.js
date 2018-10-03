@@ -3,9 +3,12 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const path = require("path");
+const bluebird = require("bluebird");
+// const cors = require("cors")
 
 // Set up a default port, configure mongoose, configure our middleware
 const PORT = process.env.PORT || 3001;
+mongoose.Promise = bluebird;
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -19,15 +22,17 @@ app.use(bodyParser.json());
 
 // enable CORS, use:
 // https://enable-cors.org/server_expressjs.html
+// app.use(cors());
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*')
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
   next();
 });
 
+
 // Routing
-var articlesController = require("./server/controller/Controller");
-var router = new express.Router();
+const articlesController = require("./server/controller/Controller");
+const router = new express.Router();
 // Define any API routes first
 // Get saved articles
 router.get("/api/saved", articlesController.find);
