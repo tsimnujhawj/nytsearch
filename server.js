@@ -14,11 +14,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Serve up static assets if in production (running on Heroku)
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static("client/build"));
-// } else {
-//   app.use(express.static(__dirname + "/client/public"));
-// }
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("/client"));
+} else {
+  app.use(express.static(__dirname + "/client"));
+}
 
 // enable CORS, use:
 // https://enable-cors.org/server_expressjs.html
