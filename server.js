@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 3001;
 mongoose.Promise = bluebird;
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(bodyParser.json());
 
 // Serve up static assets if in production (running on Heroku)
