@@ -6,6 +6,10 @@ A powerful, fast, and efficient New York Times search engine that utilizes React
 ## Demo
 You can find the NYT Search Engine deployed [here](http://nytsearch-th.herokuapp.com).
 
+![Landing page](resources/nytsearch_1.png)
+
+![Landing page](resources/nytsearch_2.png)
+
 ## Installation
 ```shell
 $ git clone git@github.com:tsimnujhawj/nytsearch.git
